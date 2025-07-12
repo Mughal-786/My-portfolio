@@ -56,7 +56,7 @@ export default function App() {
           <div className="hero-image">
             <div className="profile-circle">
               <img 
-                src="/src/Assert/download (3).jpeg" 
+                src="download_3.jpeg" 
                 alt="Maryam Habib - Frontend Developer" 
                 className="profile-image"
               />
@@ -99,7 +99,7 @@ export default function App() {
             <div className="project-card">
               <div className="project-image">
                 <img 
-                  src="/src/Assert/download.png" 
+                  src="/download_2.png" 
                   alt="Digital Clock Project" 
                   className="project-img"
                 />
@@ -122,7 +122,7 @@ export default function App() {
             <div className="project-card">
               <div className="project-image">
                 <img 
-                src="/src/Assert/download(1).png"
+                src="/download_1.png"
                   alt="Task Manager Project" 
                   className="project-img"
                 />
