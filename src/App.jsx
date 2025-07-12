@@ -1,19 +1,18 @@
 import './App.css'
 
 export default function App() {
-  const copyEmail = () => {
-    const email = "ali786ahmad786habib@gmail.com";
-    navigator.clipboard.writeText(email).then(() => {
-      alert("Email copied to clipboard!");
+  const copyToClipboard = (text, type) => {
+    navigator.clipboard.writeText(text).then(() => {
+      alert(`${type} copied to clipboard!`);
     }).catch(() => {
       // Fallback for older browsers
       const textArea = document.createElement("textarea");
-      textArea.value = email;
+      textArea.value = text;
       document.body.appendChild(textArea);
       textArea.select();
       document.execCommand("copy");
       document.body.removeChild(textArea);
-      alert("Email copied to clipboard!");
+      alert(`${type} copied to clipboard!`);
     });
   };
 
@@ -57,7 +56,7 @@ export default function App() {
           <div className="hero-image">
             <div className="profile-circle">
               <img 
-                src="/download_3.jpeg" 
+                src="/src/Assert/download (3).jpeg" 
                 alt="Maryam Habib - Frontend Developer" 
                 className="profile-image"
               />
@@ -100,7 +99,7 @@ export default function App() {
             <div className="project-card">
               <div className="project-image">
                 <img 
-                  src="/download_2.png" 
+                  src="/src/Assert/download.png" 
                   alt="Digital Clock Project" 
                   className="project-img"
                 />
@@ -114,7 +113,7 @@ export default function App() {
                   <span>JavaScript</span>
                 </div>
                 <div className="project-links">
-                  <a href="https://digital-clock-git-main-mughal-786s-;[pp ].vercel.app/" target="_blank" rel="noopener noreferrer" className="project-link">Live Demo</a>
+                  <a href="https://digital-clock-git-main-mughal-786s-projects.vercel.app/" target="_blank" rel="noopener noreferrer" className="project-link">Live Demo</a>
                   <a href="https://github.com/Mughal-786/DIGITAL-CLOCK.git" target="_blank" rel="noopener noreferrer" className="project-link">GitHub</a>
                 </div>
               </div>
@@ -123,7 +122,7 @@ export default function App() {
             <div className="project-card">
               <div className="project-image">
                 <img 
-                src="/download_1.png"
+                src="/src/Assert/download(1).png"
                   alt="Task Manager Project" 
                   className="project-img"
                 />
@@ -161,7 +160,7 @@ export default function App() {
               <div className="contact-item">
                 <strong>Email:</strong> ali786ahmad786habib@gmail.com
                 <button 
-                  onClick={copyEmail}
+                  onClick={() => copyToClipboard("ali786ahmad786habib@gmail.com", "Email")}
                   className="copy-btn"
                   title="Copy email to clipboard"
                 >
@@ -169,26 +168,24 @@ export default function App() {
                 </button>
               </div>
               <div className="contact-item">
-                <strong>LinkedIn:</strong>www.linkedin.com/in/maryam-992mm143
-
-<button 
-                  onClick={copyEmail}
+                <strong>LinkedIn:</strong> www.linkedin.com/in/maryam-992mm143
+                <button 
+                  onClick={() => copyToClipboard("www.linkedin.com/in/maryam-992mm143", "LinkedIn URL")}
                   className="copy-btn"
-                  title="Copy email to clipboard"
+                  title="Copy LinkedIn URL to clipboard"
                 >
                   📋 Copy
                 </button>
               </div>
               <div className="contact-item">
                 <strong>GitHub:</strong> github.com/Mughal-786
-                 <button 
-                  onClick={copyEmail}
+                <button 
+                  onClick={() => copyToClipboard("github.com/Mughal-786", "GitHub URL")}
                   className="copy-btn"
-                  title="Copy email to clipboard"
+                  title="Copy GitHub URL to clipboard"
                 >
                   📋 Copy
                 </button>
-                
               </div>
             </div>
           </div>
